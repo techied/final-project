@@ -3,6 +3,7 @@ var largest = 0;
 var data;
 var labels;
 var smallest = 9999;
+var input;
 
 function setup() {
   createCanvas(800, 600);
@@ -12,9 +13,12 @@ function setup() {
   dropzone.dragOver(highlight);
   dropzone.dragLeave(unhighlight);
   dropzone.drop(gotFile, unhighlight);
+  createP("--OR--");
+  input = createFileInput(gotFile);
   fill(0);
   rectMode(CORNERS);
 }
+
 
 function draw() {
   if (data != null) {
@@ -71,6 +75,7 @@ function draw() {
 }
 
 function gotFile(file) {
+  input.hide();
   dropzone.remove();
   if (file.name.split('.')[1] == 'graph') {
     data = window.atob(file.data.split(',')[1]).split('\n');
