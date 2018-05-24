@@ -33,12 +33,13 @@ function draw() {
           stroke(255, 0, 0);
         } else {
           stroke(0);
+          strokeWeight(1);
         }
-        strokeWeight(1);
         rect((800 / data.length) * i + 50, data[i] * -(600 / largest), (800 /
             data.length) *
           i +
           100, 999);
+        strokeWeight(1);
         fill(255);
         text(labels[i], (800 / data.length) * i + 50, -5);
       }
