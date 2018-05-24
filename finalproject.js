@@ -1,8 +1,8 @@
-var y = 100;
 var barGraph;
 var largest = 0;
 var data;
 var labels;
+var smallest = 9999;
 
 function setup() {
   createCanvas(800, 600);
@@ -25,6 +25,13 @@ function draw() {
       translate(0, 600);
       for (var i = 0; i < data.length; i++) {
         fill(0);
+        if (data[i] == largest) {
+          stroke(0, 255, 0);
+        } else if (data[i] == smallest) {
+          stroke(255, 0, 0);
+        } else {
+          stroke(0);
+        }
         rect((800 / data.length) * i + 50, data[i] * -(600 / largest), (800 /
             data.length) *
           i +
@@ -39,7 +46,6 @@ function draw() {
       translate(0, 600);
       for (var i = 0; i < data.length - 1; i++) {
         fill(0);
-        //line((800 / data.length) * i + 50, data[i + 1] * -(600 / largest), (800 / data.length) * (i + 1) + 50, data[i + 1] * -(600 / largest));
         line((800 / data.length) * i + 50, data[i] * -(600 / largest), ((
             800 / data.length) * (i + 1)) + 50,
           data[i + 1] * -(600 / largest));
@@ -77,6 +83,9 @@ function gotFile(file) {
     for (var i = 0; i < data.length; i++) {
       if (data[i] > largest) {
         largest = data[i];
+      }
+      if (data[i] < smallest) {
+        smallest = data[i];
       }
     }
   } else {
