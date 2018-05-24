@@ -62,7 +62,7 @@ function draw() {
     }
     var index = 6;
     for (var i = 0; i < 6; i++) {
-      line(50, i * 100 + 100, 800, i * 100 + 100);
+      line(50, i * 100 + 99, 800, i * 100 + 99);
       text(largest / 6 * index, 25, i * 100 + 10);
       index--;
     }
