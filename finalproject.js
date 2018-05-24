@@ -61,8 +61,9 @@ function draw() {
       pop();
     }
     var index = 6;
+    line(50, 5, 600, 5);
     for (var i = 0; i < 6; i++) {
-      line(50, i * 100 + 105, 800, i * 100 + 105);
+      line(50, i * 100 + 100, 800, i * 100 + 100);
       text(largest / 6 * index, 25, i * 100 + 10);
       index--;
     }
