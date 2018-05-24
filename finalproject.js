@@ -26,12 +26,15 @@ function draw() {
       for (var i = 0; i < data.length; i++) {
         fill(0);
         if (data[i] == largest) {
+          strokeWeight(4);
           stroke(0, 255, 0);
         } else if (data[i] == smallest) {
+          strokeWeight(4);
           stroke(255, 0, 0);
         } else {
           stroke(0);
         }
+        strokeWeight(1);
         rect((800 / data.length) * i + 50, data[i] * -(600 / largest), (800 /
             data.length) *
           i +
