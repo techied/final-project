@@ -1,0 +1,17 @@
+html, body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#dropzone {
+  padding: 18px;
+  border-style: dashed;
+  font-size: 20pt;
+  width: 50%;
+  border-color: #CC0000;
+}
+
+p {
+  font-size: 125%;
+}
